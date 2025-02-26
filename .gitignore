@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Dependencias de NPM
+package-lock.json
+
+# Compilados de producción
+build/
+dist/
+
+# Archivos del entorno de desarrollo
+.env
+
+# MacOS
+.DS_Store
+
+# Visual Studio Code
+.vscode/
