@@ -1,5 +1,6 @@
-import Navigation from "./Navigation";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import Navigation from "./Navigation";
 
 interface HeaderProps {
   setCurrentSection: (section: string) => void;
@@ -52,6 +53,49 @@ const Logo = styled.a`
     color: #d9a7b5;
   }
 `;
+
+const CountdownContainer = styled.div`
+  font-size: 1.2rem;
+ 
+   font-family: "Playfair Display", serif;
+   background: rgba(20, 40, 100, 0.3); /* Capa oscura para mejorar legibilidad */
+  color: white;
+  padding: 5px 15px;
+  border-radius: 25px;
+  margin: 0 20px;
+`;
+
+const CountdownTimer = () => {
+  const calculateTimeLeft = () => {
+    const targetDate = new Date("January 24, 2026 ").getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference <= 0) return { days: 0 };
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <CountdownContainer>
+      {`Countdown ${timeLeft.days} Days `}
+    </CountdownContainer>
+  );
+};
+
 function scrollToSection() {
   const section = document.getElementById("location-section");
   if (section) {
@@ -62,6 +106,7 @@ function Header({ setCurrentSection, currentSection }: HeaderProps) {
   return (
     <HeaderContainer>
       <Logo>Trini & Jeremiah</Logo>
+      <CountdownTimer/>
       <Button onClick={scrollToSection} >¿WHERE?</Button>
       <Navigation setCurrentSection={setCurrentSection} currentSection={currentSection} />
     </HeaderContainer>
