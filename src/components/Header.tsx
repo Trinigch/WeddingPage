@@ -27,7 +27,12 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
   /*border-bottom: 2px solid #d9a7b5;  Detalle en rosa palo */
+   top: 0;
+  z-index: 1000;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Agrega sombra para efecto flotante */
+
 
   @media (max-width: 768px) {
     flex-direction: column;

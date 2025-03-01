@@ -23,17 +23,24 @@ function AboutWedding() {
 
   const Title = styled.h1`
   font-family: "Playfair Display", serif;
-  font-size: 8rem;
+  font-size: 6rem;
   color: #000;
+   position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 `;
   const ImageContainer = styled.div`
+    position: relative;
     width: 100%;
     height: 100vh; /* Altura de la imagen */
     background-image: url(${backgroundImage});
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin: 150px;
   `;
 
   const DateContainer = styled.div`
@@ -52,10 +59,20 @@ width: 100%;
 margin-top: 40px;
 padding: 40px; 
 `;
+
 const ChurchSection = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-between;
+width: 100%;
+margin-top: 40px;
+padding: 40px; 
+`;
+
+const GiftSection = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
 width: 100%;
 margin-top: 40px;
 padding: 40px; 
@@ -104,12 +121,14 @@ position: absolute;
 `;
 
 const ImageContainerBuses = styled.div`
-width: 100%;
+width: 50%;
 height: 100vh; /* Altura de la imagen */
 background-image: url(${busesImage});
 background-position: center;
 background-size: cover;
 border-radius: 10px;
+
+padding: 0px; 
 
 `;
 const ConfirmationText = styled.div`
@@ -155,8 +174,9 @@ margin-top: 15px;
 
   return (
     <Container>
+      <ImageContainer>
       <Title>We're Getting Married!</Title>
-      <ImageContainer/>
+      </ImageContainer>
       <DateContainer> January | 24 | 2026 </DateContainer>
       <LocationSection id="location-section">
         <ImageContainerlocation />
@@ -208,6 +228,18 @@ margin-top: 15px;
         < ImageContainerBuses />
       </LocationSection>
 
+      <GiftSection >
+       
+    
+         <LocationTitle>And finally remember</LocationTitle>
+         <LocationText>
+           <strong>The important thing is that you come with enthusiasm, joy and the desire to have a good time.</strong>
+           <p>But if you want to give us a gift, here is our account number:</p> 
+           <strong> 0000000000000000000000 </strong>.
+        
+         </LocationText>
+  
+     </GiftSection >
    
        </Container>
   );
