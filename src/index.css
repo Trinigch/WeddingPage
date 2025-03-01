@@ -1,0 +1,94 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset & Custom Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  width: 100vw; /* Ocupar todo el ancho */
+  height: 100vh; /* Ocupar toda la altura */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #F5F5F5;
+  overflow-x: hidden;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  color: rgba(172, 250, 248, 0.87);
+  --dark-accent: #1F3A64; /*   Azul Marino (#1F3A64) – Inspirado en el saco, representa profesionalismo, confianza y seriedad.*/
+  --light-background: #E6D7C5; /* Reflejado en el tono de piel, aporta calidez y naturalidad.*/
+  --light-accent: #D9A7B5; /*Basado en la blusa, aporta un toque de amabilidad y accesibilidad.*/
+  --neutral-color:#B0B0B0;/*Del fondo, sugiere neutralidad y equilibrio.*/
+  --white-background:#F5F5F5;
+ }
+
+
+
+/* Light mode adjustments */
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #ffffff;
+  }
+}
+
+/* Responsive Styles */
+
+/* Header responsive font size */
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl; /* Adjusts font size for medium and large screens */
+  line-height: 1.1;
+  text-align: center;
+}
+
+
+
+/* Button Styling */
+button {
+  @apply rounded-lg border border-transparent py-2 px-4 text-base font-medium bg-gray-800 text-blue-400 transition hover:border-pink-300;
+}
+
+/* Navbar Styling */
+.navbar {
+  @apply w-full flex justify-around p-4 ; /* Responsive layout */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color:#8db6f7;
+
+}
+
+a {
+  @apply font-medium transition hover:text-blue-500;
+  color:#1F3A64; /* Link styling with hover */
+}
+
+ul,
+ol {
+  @apply list-none;
+}
+
+/*footer styling*/
+
+.footer {
+  @apply w-full flex justify-around p-4; 
+  position: sticky;
+  z-index: 10;
+  color:#1F3A64;
+}
+
+
+
