@@ -1,22 +1,22 @@
-WeddingPage
+# WeddingPage
 This project is about a WeddingPage application that calls the OpenWeather API and renders data in the browser.
 
-Deploy
+# Deploy
 Technologies
 -Typescript -node.js -express
 
-Installation
+# Installation
 npm install
 
-Usage
+# Usage
 To start the application, run the following command:
 
 -npm run start
 
-Credits
+# Credits
 Trinidad Peterson - GitHub Username ----- Trinigch
 
-License
+# License
 MIT License
 
 Copyright (c) 2025 Trinidad
