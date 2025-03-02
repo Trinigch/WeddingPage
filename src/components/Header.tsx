@@ -115,7 +115,6 @@ const CountdownTimer = () => {
 };
 
 function scrollToSection() {
-  
   const section = document.getElementById("location-section");
   if (section) {
     section.scrollIntoView({ behavior: "smooth" });
@@ -125,9 +124,11 @@ function Header({ setCurrentSection, currentSection }: HeaderProps) {
   return (
     <HeaderContainer>
       <Logo>Trini & Jeremiah</Logo>
-      <CountdownTimer/>
+ 
       <Button onClick={scrollToSection} >¿WHERE?</Button>
+
       <Navigation setCurrentSection={setCurrentSection} currentSection={currentSection} />
+      <CountdownTimer/>
     </HeaderContainer>
   );
 }

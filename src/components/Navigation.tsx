@@ -4,7 +4,7 @@ interface NavigationProps {
 }
 
 function Navigation({ currentSection, setCurrentSection }: NavigationProps) {
-  const sections = ['About the wedding', 'Venue Arrayan', 'Facts'];
+  const sections = [''];
 
   return (
     <nav>
