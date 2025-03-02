@@ -20,12 +20,20 @@ const Button = styled.button`
   &:hover {
     background-color: #e76f51;
   }
+  @media (max-width: 768px) {
+    font-size: .8rem;
+    margin: 5px;
+    padding: 3px 10px;
+  }
+  
 `;
 const HeaderContainer = styled.header`
   background: #fdf8f4; /* Tono crema elegante */
   color: #4a2e19; /* Marrón sofisticado */
   padding: 16px 32px;
   display: flex;
+  width: 100%;
+  
   justify-content: space-between;
   align-items: center;
   position: sticky;
@@ -36,8 +44,11 @@ const HeaderContainer = styled.header`
 
 
   @media (max-width: 768px) {
+   width: 100%;
     flex-direction: column;
     text-align: center;
+      padding: 20px 40px;
+      margin:50px;
   }
 `;
 
@@ -52,17 +63,24 @@ const Logo = styled.a`
   &:hover {
     color: #d9a7b5;
   }
+    @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const CountdownContainer = styled.div`
   font-size: 1.2rem;
- 
-   font-family: "Playfair Display", serif;
-   background: rgba(20, 40, 100, 0.3); /* Capa oscura para mejorar legibilidad */
+  font-family: "Playfair Display", serif;
+  background: rgba(20, 40, 100, 0.3); /* Capa oscura para mejorar legibilidad */
   color: white;
   padding: 5px 15px;
   border-radius: 25px;
   margin: 0 20px;
+    @media (max-width: 768px) {
+    font-size: .8rem;
+    margin: 5px;
+    padding: 3px 10px;
+  }
 `;
 
 const CountdownTimer = () => {
@@ -97,6 +115,7 @@ const CountdownTimer = () => {
 };
 
 function scrollToSection() {
+  
   const section = document.getElementById("location-section");
   if (section) {
     section.scrollIntoView({ behavior: "smooth" });
