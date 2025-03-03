@@ -28,6 +28,12 @@ const Container = styled.div`
   text-align: center;
   background-color: #fdf8f4;
   padding: 10px 100px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    
+   
+  }
 `;
 
 const Title = styled.h1`
@@ -61,7 +67,11 @@ const ImageContainer = styled.div`
   background-size: cover;
   border-radius: 10px;
   margin: 50px;
- 
+  @media (max-width: 800px) {
+      width: 100%;
+      height: 100vh;
+      margin: 0px;
+  }
   
 `;
 
@@ -73,9 +83,13 @@ const SectionContainer = styled.div<{ reverse?: boolean }>`
   margin-top: 140px;
   padding: 40px;
   flex-direction: ${(props) => (props.reverse ? 'row-reverse' : 'row')};
+  
+ 
+
   @media (max-width: 768px) {
-    margin-top: 40px;
-    padding: 10px;
+    flex-direction: column-reverse; /* Imagen arriba en pantallas pequeñas */
+    align-items: center;
+    text-align: center;
   }
 `;
 
@@ -101,14 +115,14 @@ const StyledImage = styled.div<{ image: string }>`
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-   @media (max-width: 768px) {
-   border-radius: 50px;
-   width: 50%;
-  }
-   @media (max-width: 500px) {
-   border-radius: 100px;
 
-    
+
+
+  @media (max-width: 768px) {
+    width: 200px; /* Ajusta el tamaño de la imagen */
+    height: 200px; 
+    border-radius: 50%; /* Hace la imagen circular */
+    margin-bottom: 20px; /* Espaciado con el texto */
   }
   @media (max-width: 350px) {
   display: none

@@ -44,11 +44,11 @@ const HeaderContainer = styled.header`
 
 
   @media (max-width: 768px) {
-   width: 85%;
+
     flex-direction: column;
     text-align: center;
     
-      margin:50px;
+   
   }
 `;
 
