@@ -32,7 +32,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-family: "Playfair Display", serif;
-  font-size: 6rem;
+  font-size: 5rem;
   color: #000;
   position: absolute;
   top: -10%;
@@ -40,7 +40,13 @@ const Title = styled.h1`
   transform: translate(-50%);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
-    @media (max-width: 768px) {
+   @media (max-width: 800px) {
+    font-size: 4rem;
+  }
+    @media (max-width: 650px) {
+    font-size: 3rem;
+  }
+     @media (max-width: 450px) {
     font-size: 2rem;
   }
   
@@ -55,9 +61,8 @@ const ImageContainer = styled.div`
   background-size: cover;
   border-radius: 10px;
   margin: 50px;
-  @media (max-width: 768px) {
-    width: 75%;
-  }
+ 
+  
 `;
 
 const SectionContainer = styled.div<{ reverse?: boolean }>`
@@ -96,6 +101,18 @@ const StyledImage = styled.div<{ image: string }>`
   background-size: cover;
   background-position: center;
   border-radius: 10px;
+   @media (max-width: 768px) {
+   border-radius: 50px;
+   width: 50%;
+  }
+   @media (max-width: 500px) {
+   border-radius: 100px;
+
+    
+  }
+  @media (max-width: 350px) {
+  display: none
+  }
 `;
 
 const TextContainer = styled.div`
@@ -132,6 +149,11 @@ const ConfirmationSection = styled.div`
   justify-content: center;
   margin-top: 40px;
   position: relative;
+   @media (max-width: 450px) {
+      font-size: 1rem;
+      border-radius: 50px;
+  
+  }
 `;
 
 const ImageContainerConfirmation = styled.div`
@@ -142,6 +164,11 @@ const ImageContainerConfirmation = styled.div`
   background-size: cover;
   border-radius: 10px;
   position: absolute;
+    @media (max-width: 450px) {
+      font-size: 1rem;
+      border-radius: 100px;
+  
+  }
 `;
 
 const ConfirmationText = styled.div`
@@ -158,6 +185,10 @@ const ConfirmationText = styled.div`
   font-style: italic;
   padding: 20px;
   text-align: center;
+   @media (max-width: 450px) {
+      font-size: 2rem;
+      border-radius: 100px;
+  }
 `;
 
 function AboutWedding() {
