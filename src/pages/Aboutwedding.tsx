@@ -27,7 +27,7 @@ const Container = styled.div`
   align-items: center;
   text-align: center;
   background-color: #fdf8f4;
-  padding: 10px 100px;
+  padding: 10px 0px;
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
@@ -41,18 +41,23 @@ const Title = styled.h1`
   font-size: 5rem;
   color: #000;
   position: absolute;
+  margin-top:30px;
   top: -10%;
   left: 50%;
   transform: translate(-50%);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
    @media (max-width: 800px) {
+     margin-top:80px;
     font-size: 4rem;
+     
   }
     @media (max-width: 650px) {
+      margin-top:80px;
     font-size: 3rem;
   }
      @media (max-width: 450px) {
+        margin-top:80px;
     font-size: 2rem;
   }
   
@@ -66,7 +71,7 @@ const ImageContainer = styled.div`
   background-position: center;
   background-size: cover;
   border-radius: 10px;
-  margin: 50px;
+  margin: 50px 0px;
   @media (max-width: 800px) {
       width: 100%;
       height: 100vh;
@@ -80,12 +85,10 @@ const SectionContainer = styled.div<{ reverse?: boolean }>`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-top: 140px;
-  padding: 40px;
+  margin-top: 140px 0px;
+  padding: 20px 0px;
   flex-direction: ${(props) => (props.reverse ? 'row-reverse' : 'row')};
   
- 
-
   @media (max-width: 768px) {
     flex-direction: column-reverse; /* Imagen arriba en pantallas pequeñas */
     align-items: center;
@@ -97,16 +100,14 @@ const Section: React.FC<SectionProps>= ({id, image, title, text, reverse = false
   
   return (
     <SectionContainer id={id} reverse={reverse || false}>
-      <StyledImage image={image} />
       <TextContainer>
         <SectionTitle>{title}</SectionTitle>
         <SectionText>{text}</SectionText>
       </TextContainer>
+      <StyledImage image={image} />
     </SectionContainer>
   );
 };
-
-
 
 const StyledImage = styled.div<{ image: string }>`
   width: 50%;
@@ -115,14 +116,11 @@ const StyledImage = styled.div<{ image: string }>`
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-
-
-
   @media (max-width: 768px) {
     width: 200px; /* Ajusta el tamaño de la imagen */
     height: 200px; 
     border-radius: 50%; /* Hace la imagen circular */
-    margin-bottom: 20px; /* Espaciado con el texto */
+    margin-bottom: 20px 0; /* Espaciado con el texto */
   }
   @media (max-width: 350px) {
   display: none
@@ -152,7 +150,7 @@ const SectionText = styled.p`
   font-size: 1.5rem;
   color: #5a5a5a;
   font-style: italic;
-  margin-top: 15px;
+  margin-top: 15px 0px;
 `;
 
 const ConfirmationSection = styled.div`
@@ -197,7 +195,7 @@ const ConfirmationText = styled.div`
   color: white;
   font-size: 2.5rem;
   font-style: italic;
-  padding: 20px;
+  padding: 2px;
   text-align: center;
    @media (max-width: 450px) {
       font-size: 2rem;
@@ -212,18 +210,19 @@ function AboutWedding() {
         <Title>We're Getting Married!</Title>
       </ImageContainer>
 
-      <div style={{ position: "relative", width: "100%", textAlign: "center", marginTop: "0px" }}>
+      <div style={{ position: "relative", width: "100%", textAlign: "center", marginTop: "50px" }}>
         <Title>February 24, 2026</Title>
       </div>
-     
+     <div style={{  width: "100%", textAlign: "center", marginTop: "150px" }}>
       <Section
   id="location-section"
-  image={LugarImage}
   title="Where will it be?"
+  image={LugarImage}
   text={`We want you to be part of this episode of our history... which will be at
    San Martín de los Andes, Neuquen, Argentina.`}
   reverse={false}
 />
+</div>
       <Section
         image={churchImage}
         title="The ceremony"
