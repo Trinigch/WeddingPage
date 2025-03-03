@@ -55,6 +55,9 @@ const ImageContainer = styled.div`
   background-size: cover;
   border-radius: 10px;
   margin: 50px;
+  @media (max-width: 768px) {
+    width: 75%;
+  }
 `;
 
 const SectionContainer = styled.div<{ reverse?: boolean }>`
@@ -65,6 +68,10 @@ const SectionContainer = styled.div<{ reverse?: boolean }>`
   margin-top: 140px;
   padding: 40px;
   flex-direction: ${(props) => (props.reverse ? 'row-reverse' : 'row')};
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    padding: 10px;
+  }
 `;
 
 const Section: React.FC<SectionProps>= ({id, image, title, text, reverse = false }) => {
@@ -94,6 +101,9 @@ const StyledImage = styled.div<{ image: string }>`
 const TextContainer = styled.div`
   width: 45%;
   text-align: center;
+   @media (max-width: 768px) {
+   font-size: 1rem;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -101,6 +111,10 @@ const SectionTitle = styled.h2`
   font-size: 3.5rem;
   font-weight: bold;
   color: #333;
+   @media (max-width: 768px) {
+      font-size: 1.5rem;
+      padding: 10px;
+  }
 `;
 
 const SectionText = styled.p`
