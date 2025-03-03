@@ -28,6 +28,7 @@ const Container = styled.div`
   text-align: center;
   background-color: #fdf8f4;
   padding: 10px 0px;
+
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
@@ -42,7 +43,7 @@ const Title = styled.h1`
   color: #000;
   position: absolute;
   margin-top:30px;
-  top: -10%;
+  top: -12%;
   left: 50%;
   transform: translate(-50%);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
@@ -54,11 +55,11 @@ const Title = styled.h1`
   }
     @media (max-width: 650px) {
       margin-top:80px;
-    font-size: 3rem;
+      font-size: 3rem;
   }
      @media (max-width: 450px) {
         margin-top:80px;
-    font-size: 2rem;
+        font-size: 2rem;
   }
   
 `;
@@ -67,15 +68,18 @@ const ImageContainer = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
+  
+  max-width: 1200px; 
+
   background-image: url(${backgroundImage});
   background-position: center;
   background-size: cover;
   border-radius: 10px;
-  margin: 50px 0px;
+  margin: 50px 50px;
   @media (max-width: 800px) {
       width: 100%;
       height: 100vh;
-      margin: 0px;
+      margin: 20px;
   }
   
 `;
@@ -111,18 +115,21 @@ const Section: React.FC<SectionProps>= ({id, image, title, text, reverse = false
 
 const StyledImage = styled.div<{ image: string }>`
   width: 50%;
+  max-width: 600px; 
   height: 450px;
   background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;
   border-radius: 10px;
+  margin: 50px auto; /* Centra y añade margen lateral */
+  margin-bottom: 20px 0; /* Espaciado con el texto */
   @media (max-width: 768px) {
     width: 200px; /* Ajusta el tamaño de la imagen */
     height: 200px; 
     border-radius: 50%; /* Hace la imagen circular */
     margin-bottom: 20px 0; /* Espaciado con el texto */
   }
-  @media (max-width: 350px) {
+  @media (max-width: 280px) {
   display: none
   }
 `;
@@ -132,6 +139,11 @@ const TextContainer = styled.div`
   text-align: center;
    @media (max-width: 768px) {
    font-size: 1rem;
+  };
+    @media (max-width: 600px) {
+    width: 100%;  /* Hace que el texto ocupe todo el ancho */
+    font-size: 1rem;
+    padding: 0 20px; /* Agrega algo de padding para evitar que el texto toque los bordes */
   }
 `;
 
