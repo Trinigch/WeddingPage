@@ -245,8 +245,8 @@ function AboutWedding() {
         <ImageContainerConfirmation />
         <ConfirmationText>
           <p>Please RSVP</p>
-          <p>Trini: 6513826116</p>
-          <p>Jeremiah: 2188311294</p>
+          <p>Trini: 0000826100</p>
+          <p>Jeremiah: 0000311200</p>
         </ConfirmationText>
       </ConfirmationSection>
       <Section
