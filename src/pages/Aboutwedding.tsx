@@ -1,15 +1,10 @@
 
 import styled from "styled-components";
-import backgroundImage from "./../assets/img/homeferry.jpg";
-import LugarImage from "./../assets/img/San-Martin-de-los-Andes-casco-urbano.jpg";
-
-import churchImage from "./../assets/img/imponente-interior.jpg";
-
-import ArrayanImage from "./../assets/img/joke.png";
-import busesImage from "./../assets/img/hero1.jpeg";
-import ConfirmationImage from "./../assets/img/home.jpg";
-
-import backgroundImagegift from "./../assets/img/homeNosCasamos.jpeg";
+import NosCasamos from "./../assets/img/hero1.jpeg";
+import backgroundImage from "./../assets/img/noche.png";
+import LugarImage from "./../assets/img/senadordupont.png";
+import ConfirmationImage from "./../assets/img/backgrounlejos.png";
+import backgroundImagegift from "./../assets/img/background.jpeg";
 
 interface SectionProps {
   id?: string;
@@ -40,10 +35,10 @@ const Container = styled.div`
 const Title = styled.h1`
   font-family: "Playfair Display", serif;
   font-size: 5rem;
-  color: #000;
+  color: #fef6e4;
   position: absolute;
   margin-top:30px;
-  top: -12%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
@@ -63,6 +58,20 @@ const Title = styled.h1`
   }
   
 `;
+const DateTitle = styled.h1`
+  font-family: "Playfair Display", serif;
+  font-size: 4.5rem;
+  color: #D4AF37; /* Color dorado */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* Sombra sutil para resaltar */
+  margin-top: 20px;
+
+  @media (max-width: 800px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 2rem;
+  }
+`;
 
 const ImageContainer = styled.div`
   position: relative;
@@ -71,7 +80,7 @@ const ImageContainer = styled.div`
   
   max-width: 1200px; 
 
-  background-image: url(${backgroundImage});
+  background-image: url(${NosCasamos});
   background-position: center;
   background-size: cover;
   border-radius: 10px;
@@ -152,6 +161,7 @@ const SectionTitle = styled.h2`
   font-size: 3.5rem;
   font-weight: bold;
   color: #333;
+  text-align: center; 
    @media (max-width: 768px) {
       font-size: 1.5rem;
       padding: 10px;
@@ -223,7 +233,7 @@ function AboutWedding() {
       </ImageContainer>
 
       <div style={{ position: "relative", width: "100%", textAlign: "center", marginTop: "50px" }}>
-        <Title>February 24, 2026</Title>
+         <DateTitle>January 24, 2026</DateTitle>
       </div>
      <div style={{  width: "100%", textAlign: "center", marginTop: "150px" }}>
       <Section
@@ -231,17 +241,11 @@ function AboutWedding() {
   title="Where will it be?"
   image={LugarImage}
   text={`We want you to be part of this episode of our history... which will be at
-   San Martín de los Andes, Neuquen, Argentina.`}
+   San Francisco Convent, Tigre, Argentina.`}
   reverse={false}
 />
 </div>
-      <Section
-        image={churchImage}
-        title="The ceremony"
-        text="The ceremony will be at 11:00 hr. at San Jose Church: Gral. Roca 811."
-        reverse
-      />
-      <ConfirmationSection>
+        <ConfirmationSection>
         <ImageContainerConfirmation />
         <ConfirmationText>
           <p>Please RSVP</p>
@@ -249,17 +253,17 @@ function AboutWedding() {
           <p>Jeremiah: 2188311294</p>
         </ConfirmationText>
       </ConfirmationSection>
-      <Section
-        image={ArrayanImage}
-        title="We will celebrate in Arrayan"
-        text="Circuito Arrayan KM 4,5. San Martín de los Andes, Neuquen, Argentina."
-      />
-      <Section
-        image={busesImage}
-        title="We will put buses at your disposal"
-        text="At 12hr from San Jose Church - Gral. Roca 811 - to the venue at Arrayan - Circuito Arrayan KM 4,5. At 21hr and 23hr from the venue at Arrayan to your hotel."
-        reverse
-      />
+      <Section  
+          image={backgroundImage}
+          title="We will celebrate in..."
+          text={
+            <p style={{ fontStyle: "italic", textAlign: "center" }}>
+              Join us to celebrate love and joy — at the iconic Senador Dupont.
+            </p>
+          }
+          reverse={true}
+        />
+
       <Section
         image={backgroundImagegift}
         title="And finally remember"
