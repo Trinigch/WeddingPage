@@ -267,7 +267,7 @@ function AboutWedding() {
       <Section
         image={backgroundImagegift}
         title="And finally remember"
-        text="The important thing is that you come with enthusiasm, joy, and the desire to have a good time. But if you want to give us a gift, here is our account number: 0000000000000000000000.  ~  ~ "
+        text="The important thing is that you come with the desire to have a good time. But if you want to give us a gift, here is our account number: 0000000000000000000000.  ~  ~ "
       />
     </Container>
   );
